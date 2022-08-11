@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:about_me_app/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -37,6 +38,15 @@ class Home extends StatelessWidget {
                 "I'm a Software Developer working most with Web and Mobile Frontend development",
                 style: TextStyle(color: Colors.white),
               ),
+            ),
+            const SizedBox(height: 70),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Button('Skills', () => print('teste')),
+                const SizedBox(width: 50),
+                Button('Experience', () => print('teste')),
+              ],
             )
           ],
         ),
