@@ -9,16 +9,14 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(20),
       child: ElevatedButton(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Text(title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 17,
-              )),
-        ),
+        child: Text(title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            )),
         onPressed: onPress,
         style: ButtonStyle(
             fixedSize: MaterialStateProperty.all(const Size.fromWidth(140)),

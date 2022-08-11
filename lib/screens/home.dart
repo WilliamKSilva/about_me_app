@@ -1,11 +1,17 @@
 import 'dart:ui';
 
 import 'package:about_me_app/widgets/button.dart';
+import 'package:about_me_app/widgets/modal.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +49,8 @@ class Home extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Button('Skills', () => print('teste')),
-                const SizedBox(width: 50),
+                Button('Skills', () => _handleOpenModal()),
+                const SizedBox(width: 20),
                 Button('Experience', () => print('teste')),
               ],
             )
@@ -52,5 +58,21 @@ class Home extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _handleOpenModal() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15.0),
+                topRight: Radius.circular(15.0))),
+        context: context,
+        builder: (context) {
+          return const FractionallySizedBox(
+            heightFactor: 0.8,
+            child: Modal(),
+          );
+        });
   }
 }
