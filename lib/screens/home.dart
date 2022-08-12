@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:about_me_app/screens/experience.dart';
 import 'package:about_me_app/widgets/button.dart';
 import 'package:about_me_app/widgets/modal.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,14 @@ class _HomeState extends State<Home> {
               children: [
                 Button('Skills', () => _handleOpenModal()),
                 const SizedBox(width: 20),
-                Button('Experience', () => print('teste')),
+                Button(
+                    'Experience',
+                    () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Experience()))
+                        })
               ],
             )
           ],

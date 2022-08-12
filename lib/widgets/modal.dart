@@ -9,7 +9,7 @@ class Modal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF393E46),
+      color: const Color(0xFF252525),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -20,7 +20,7 @@ class Modal extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.close,
-                    color: Colors.white,
+                    color: Color(0xFFB270A2),
                     size: 38,
                     semanticLabel: "Close modal button",
                   )
@@ -33,7 +33,7 @@ class Modal extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 30),
                 child: Column(
                   children: const [
-                    Skill(),
+                    Skill('teste', 'teste'),
                     SizedBox(
                       width: 20,
                     )
